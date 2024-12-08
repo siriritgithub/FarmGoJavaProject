@@ -35,6 +35,11 @@ public class AdminController {
     @Autowired
     private UserService userService;
 	
+    
+    @GetMapping("/")
+    public String home() {
+        return "home"; // This will render home.html from the templates folder
+    }
    
 	//regular home page before any logins
 	@GetMapping("/home")
@@ -43,6 +48,7 @@ public class AdminController {
 		mv.setViewName("home");
 		return mv;
 	}
+	
 	
 	//calling admin login page
 	@GetMapping("/adminlogin")
